@@ -1,0 +1,19 @@
+{
+	"name": "frontend-mentor",
+	"version": "1.0.0",
+	"description": "A collection of completed challenges from the Frontend Mentor website.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node-sass --output-style compressed -o css/ scss/",
+		"watch": "nodemon -e scss -x \"npm run build\"",
+		"start": "npm run watch"
+	},
+	"author": "Sai Sridhar Akula",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.18",
+		"sass": "^1.53.0"
+	},
+	"dependencies": {}
+}
