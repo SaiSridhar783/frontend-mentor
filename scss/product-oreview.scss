@@ -1,0 +1,128 @@
+//@import "base";
+$para-font: clamp(12px, 2vmin, 14px);
+$grayish-blue: hsl(228, 12%, 48%);
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(30, 38%, 92%);
+	font-family: Montserrat;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: clamp(20rem, 50vmax, 40rem);
+	height: clamp(15rem, 40vmax, 30rem);
+	border-radius: 10px;
+	overflow: hidden;
+
+	img {
+		width: 50%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	h6 {
+		text-transform: uppercase;
+		color: $grayish-blue;
+		letter-spacing: 5px;
+		font-size: 14px;
+		margin-bottom: 0;
+		font-size: $para-font;
+	}
+
+	h1 {
+		font-family: Fraunces;
+		color: hsl(212, 21%, 14%);
+		font-size: clamp(25px, 5vmin, 2.5rem);
+	}
+
+	p {
+		color: $grayish-blue;
+		font-size: $para-font;
+		line-height: 1.4rem;
+	}
+
+	@media screen and (max-width: 375px) {
+		flex-direction: column;
+		width: clamp(15rem, 40vmax, 28rem);
+		height: clamp(20rem, 85vmax, 40rem);
+	}
+}
+
+#mobile-image {
+	display: none;
+
+	@media screen and (max-width: 375px) {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+
+#desktop-image {
+	display: block;
+
+	@media screen and (max-width: 375px) {
+		display: none;
+	}
+}
+
+.content {
+	background-color: white;
+	height: 100%;
+	padding: 1rem 1.8rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.price {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: Fraunces;
+	color: hsl(158, 36%, 37%);
+	font-weight: 700;
+	font-size: 2rem;
+	font-size: clamp(20px, 4vmin, 2.2rem);
+
+	span {
+		text-decoration: line-through;
+		font-family: Montserrat;
+		color: $grayish-blue;
+		font-size: 0.9rem;
+		margin-left: 1.5rem;
+		font-weight: lighter;
+	}
+}
+
+button {
+	border-radius: 8px;
+	background-color: hsl(158, 36%, 37%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	padding: 1rem 0;
+	font-family: Montserrat;
+	color: white;
+	font-weight: 500;
+	margin-top: 1.5rem;
+
+	&:hover,
+	&:active {
+		background-color: hsl(158, 36%, 23%);
+		cursor: pointer;
+	}
+
+	.cart {
+		margin-right: 0.5rem;
+		aspect-ratio: 1 / 1;
+		width: 1rem;
+	}
+}
