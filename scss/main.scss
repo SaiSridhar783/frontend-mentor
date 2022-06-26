@@ -21,6 +21,10 @@ ol {
 	padding: 1rem;
 	margin: 0;
 	counter-reset: list-counter;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: flex-start;
 }
 
 li {

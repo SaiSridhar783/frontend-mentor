@@ -1,4 +1,7 @@
-const arr = ["product-preview-card-component-main"];
+const arr = [
+	"product-preview-card-component-main",
+	"interactive-rating-component-main",
+];
 const contentElement = document.getElementById("content__list");
 
 arr.map((challenge) => {
@@ -8,7 +11,8 @@ arr.map((challenge) => {
 		.join(" ")
 		.replace(/\w\S*/g, function (txt) {
 			return txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase();
-		});
+		})
+		.slice(0, -4);
 	li.innerHTML = `<a href="Starters/${challenge}/index.html">${title}</a>`;
 	contentElement.appendChild(li);
 });
