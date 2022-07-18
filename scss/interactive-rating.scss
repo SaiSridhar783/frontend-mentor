@@ -1,1 +1,129 @@
 @import "base";
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$lightgray: hsl(217, 12%, 63%);
+$mediumgray: hsl(216, 12%, 54%);
+$blue: hsl(213, 19%, 18%);
+$blue-bg: hsl(213, 19%, 21%);
+$darkblue: hsl(216, 12%, 8%);
+$size: 15px;
+$mobile: 375px;
+$desktop: 1440px;
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	@extend .center;
+	background-color: $darkblue;
+	flex-direction: column;
+}
+
+.card {
+	aspect-ratio: 1 / 1;
+	width: 50vmin;
+	background-color: $blue;
+	border-radius: 1.5rem;
+	min-width: 350px;
+	padding: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.top-star {
+	color: $orange;
+	background-color: $blue-bg;
+	padding: 0.6rem;
+	aspect-ratio: 1 / 1;
+	font-size: $size;
+	max-width: 2.5 * $size;
+	border-radius: 50%;
+	@extend .center;
+	font-family: "Overpass";
+}
+
+h1 {
+	color: $white;
+	font-family: "Overpass";
+}
+
+p {
+	font-size: $size;
+	color: $lightgray;
+	font-family: "Overpass";
+}
+
+.rating {
+	@extend .center;
+	justify-content: space-between;
+}
+
+.number {
+	color: $mediumgray;
+	font-weight: 700;
+	font-family: "Overpass";
+	background-color: $blue-bg;
+	@extend .center;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	width: 3 * $size;
+
+	&:hover {
+		background-color: $lightgray;
+		color: $white;
+		cursor: pointer;
+	}
+}
+
+.selected {
+	@extend .number;
+	background-color: $orange;
+	color: $white;
+}
+
+button {
+	background-color: $orange;
+	color: $white;
+	border-radius: 2rem;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-size: $size;
+	padding: 0.5rem 0;
+	font-weight: 700;
+	font-family: "Overpass";
+
+	&:hover,
+	&:active {
+		background-color: $white;
+		color: $orange;
+		cursor: pointer;
+	}
+}
+
+#thank {
+	@extend .center;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	font-size: $size;
+	font-family: "Overpass";
+
+	.info {
+		color: $orange;
+		padding: 0.3rem 1.3rem;
+		border-radius: 2rem;
+		background-color: $blue-bg;
+		font-family: "Overpass";
+	}
+
+	img {
+		transform: scale(0.8);
+	}
+}

@@ -4,6 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- displays site properly based on user's device -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 
 		<link
 			rel="icon"
@@ -27,19 +40,41 @@
 	</head>
 	<body>
 		<!-- Rating state start -->
-
-		How did we do? Please let us know how we did with your support request.
-		All feedback is appreciated to help us improve our offering! 1 2 3 4 5
-		Submit
-
+		<div class="card" id="main">
+			<div class="top-star">
+				<i class="fa fa-star"></i>
+			</div>
+			<h1>How did we do ?</h1>
+			<p>
+				Please let us know how we did with your support request. All
+				feedback is appreciated to help us improve our offering!
+			</p>
+			<div class="rating">
+				<div class="number">1</div>
+				<div class="number">2</div>
+				<div class="number">3</div>
+				<div class="number">4</div>
+				<div class="number">5</div>
+			</div>
+			<button>Submit</button>
+		</div>
 		<!-- Rating state end -->
 
 		<!-- Thank you state start -->
+		<div class="card" id="thank" style="display: none">
+			<img alt="Thank You" src="./images/illustration-thank-you.svg" />
+			<div class="info">
+				You selected
+				<span id="userRating"></span>
+				out of 5
+			</div>
 
-		You selected
-		<!-- Add rating here -->
-		out of 5 Thank you! We appreciate you taking the time to give a rating.
-		If you ever need more support, don’t hesitate to get in touch!
+			<h1>Thank you!</h1>
+			<p>
+				We appreciate you taking the time to give a rating. If you ever
+				need more support, don&apos;t hesitate to get in touch!
+			</p>
+		</div>
 
 		<!-- Thank you state end -->
 
@@ -49,7 +84,29 @@
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="_blank"
 				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+			>. Coded by
+			<a href="https://github.com/SaiSridhar783">Akula Sai Sridhar</a>.
 		</div>
 	</body>
+	<script>
+		let rate = null;
+		const rating = document.querySelector(".rating");
+		const numbers = document.querySelectorAll(".number");
+		rating.addEventListener("click", function (e) {
+			numbers.forEach((number) => {
+				number.className = "number";
+			});
+			e.target.className = "selected";
+			rate = e.target.innerText;
+		});
+
+		const button = document.querySelector("button");
+		const userRating = document.querySelector("#userRating");
+		button.addEventListener("click", function () {
+			if (!rate) return alert("Please Select a rating first!");
+			document.querySelector("#main").style.display = "none";
+			document.querySelector("#thank").style.display = "flex";
+			userRating.innerText = rate;
+		});
+	</script>
 </html>
