@@ -1,0 +1,143 @@
+@import "base";
+
+$blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$size: 18px;
+$family: "Outfit";
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hori {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+body {
+	@extend .center;
+	background-color: $main-bg;
+}
+
+.card {
+	width: 40vmin;
+	min-width: 320px;
+	padding: 1rem;
+	background-color: $card-bg;
+	border-radius: 0.8rem;
+	box-shadow: 0 33px 0 14px rgba(12, 23, 41, 1),
+		0 15px 2px 40px rgba(12, 23, 41, 0.3);
+
+	.cube {
+		border-radius: 0.6rem;
+		position: relative;
+		z-index: 0;
+	}
+
+	h4 {
+		font-family: $family;
+		font-size: 1.2 * $size;
+		color: $white;
+	}
+
+	p {
+		font-family: $family;
+		font-weight: 300;
+		font-size: $size;
+		color: $blue;
+	}
+
+	.ether,
+	.quantity,
+	.time,
+	.person {
+		@extend .hori;
+		font-family: $family;
+	}
+
+	.ether {
+		justify-content: space-between;
+	}
+
+	.quantity {
+		font-weight: 400;
+		color: $cyan;
+	}
+
+	.time {
+		font-weight: 400;
+		color: $blue;
+	}
+
+	h4:hover,
+	span:hover {
+		color: $cyan;
+		cursor: pointer;
+	}
+}
+
+.sub {
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+.line {
+	border-bottom: 2px solid $line;
+}
+
+.person {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+
+	img {
+		width: 2rem;
+		aspect-ratio: 1 / 1;
+		border: 1px solid $white;
+		border-radius: 50%;
+		margin-right: 0.5rem;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	.name {
+		color: $white;
+	}
+}
+
+.eye {
+	@extend .center;
+	position: relative;
+	width: 288px;
+	aspect-ratio: 1/1;
+	border-radius: 0.6rem;
+	top: 0;
+	left: 0;
+	background-image: url("../Starters/nft-preview-card-component-main/images/image-equilibrium.jpg");
+	background-size: cover;
+
+	.transparent {
+		background-color: rgba(0, 255, 247, 0.5);
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		border-radius: 0.6rem;
+		display: grid;
+		place-items: center;
+		opacity: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
