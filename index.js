@@ -1,6 +1,7 @@
 const arr = [
-	"product-preview-card-component-main",
 	"interactive-rating-component-main",
+	"product-preview-card-component-main",
+	"qr-code-component-main",
 ];
 const contentElement = document.getElementById("content__list");
 

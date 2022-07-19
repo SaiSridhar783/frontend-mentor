@@ -1,0 +1,52 @@
+@import "base";
+
+$mobile: 375px;
+$white: hsl(0, 0%, 100%);
+$lightgray: hsl(212, 45%, 89%);
+$grayblue: hsl(220, 15%, 55%);
+$blue: hsl(218, 44%, 22%);
+$size: 15px;
+$family: "Outfit";
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+body {
+	@extend .center;
+	background-color: $lightgray;
+}
+
+.card {
+	border-radius: 0.8rem;
+	background-color: $white;
+	padding: 0.8rem;
+	width: 40vmin;
+	min-width: 300px;
+	text-align: center;
+
+	img {
+		border-radius: 0.5rem;
+	}
+
+	h1 {
+		font-family: $family;
+		color: $blue;
+		font-size: 1.2rem;
+	}
+
+	p {
+		font-family: $family;
+		color: $grayblue;
+		font-size: $size;
+	}
+
+	.sub {
+		padding: 0.9rem 0.8rem;
+		gap: 1rem;
+		@extend .center;
+	}
+}
