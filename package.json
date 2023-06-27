@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "node-sass --output-style compressed -o css/ scss/",
 		"watch": "nodemon -e scss -x \"npm run build\"",
-		"start": "npm run watch"
+		"start": "npm run watch",
+		"deploy": "echo \"Error: no test specified\""
 	},
 	"author": "Sai Sridhar Akula",
 	"license": "ISC",
