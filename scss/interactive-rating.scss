@@ -60,6 +60,7 @@ p {
 
 .rating {
 	@extend .center;
+	flex-direction: row;
 	justify-content: space-between;
 }
 

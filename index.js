@@ -4,6 +4,7 @@ const arr = [
 	"order-summary-component-main",
 	"product-preview-card-component-main",
 	"qr-code-component-main",
+	"results-summary-component-main",
 ];
 const contentElement = document.getElementById("content__list");
 
