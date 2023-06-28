@@ -1,11 +1,4 @@
-const arr = [
-	"interactive-rating-component-main",
-	"nft-preview-card-component-main",
-	"order-summary-component-main",
-	"product-preview-card-component-main",
-	"qr-code-component-main",
-	"results-summary-component-main",
-];
+const arr = ["interactive-rating-component-main","nft-preview-card-component-main","order-summary-component-main","product-preview-card-component-main","qr-code-component-main","results-summary-component-main","stats-preview-card-component-main"]
 const contentElement = document.getElementById("content__list");
 
 arr.map((challenge) => {

@@ -8,7 +8,7 @@
 		"build": "node-sass --output-style compressed -o css/ scss/",
 		"watch": "nodemon -e scss -x \"npm run build\"",
 		"start": "npm run watch",
-		"deploy": "echo \"Error: no test specified\""
+		"deploy": "echo \"Skipping Build Process\""
 	},
 	"author": "Sai Sridhar Akula",
 	"license": "ISC",
