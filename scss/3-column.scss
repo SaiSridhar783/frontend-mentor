@@ -1,0 +1,95 @@
+@import "base";
+
+$orange: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$darkcyan: hsl(179, 100%, 13%);
+$white: hsla(0, 0%, 100%, 0.75);
+$gray: hsl(0, 0%, 95%);
+$family: "Big Shoulders Display";
+$mainfamily: "Lexend Deca";
+$size: 820px;
+
+body {
+	display: grid;
+	place-items: center;
+	background: $gray;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: "box1 box2 box3";
+	border-radius: 8px;
+	overflow: hidden;
+	width: clamp(800px, 80%, 900px);
+
+	@media (max-width: $size) {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"box1"
+			"box2"
+			"box3";
+
+		width: clamp(300px, 85%, 400px);
+		margin: 2rem;
+	}
+}
+
+.button {
+	mix-blend-mode: screen;
+	background-color: white;
+	border-radius: 10rem;
+	padding: 0.8rem 2rem;
+	border: none;
+	font-family: $mainfamily;
+	font-weight: 700;
+	font-size: 0.9rem;
+	text-transform: capitalize;
+
+	&:hover {
+		cursor: pointer;
+		background-color: transparent;
+		color: $white;
+		border: 2px solid white;
+	}
+}
+
+.box {
+	padding: 15%;
+}
+
+.box1 {
+	background: $orange;
+	grid-area: box1;
+}
+
+.box2 {
+	background: $cyan;
+	grid-area: box2;
+}
+
+.box3 {
+	background: $darkcyan;
+	grid-area: box3;
+}
+
+.title {
+	font-family: $family;
+	font-weight: 700;
+	font-size: 2.2rem;
+	color: $white;
+	margin: 1.5rem 0;
+	text-transform: uppercase;
+}
+
+.description {
+	font-family: $mainfamily;
+	font-weight: 400;
+	font-size: 0.9rem;
+	color: $gray;
+	margin-bottom: 5rem;
+
+	@media (max-width: $size) {
+		margin-bottom: 2rem;
+	}
+}
