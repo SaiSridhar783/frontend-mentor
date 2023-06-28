@@ -1,0 +1,122 @@
+@import "base";
+
+$family: "Kumbh Sans";
+$cyan: hsl(185, 75%, 39%);
+$darkblue: hsl(229, 23%, 23%);
+$blue: hsl(227, 10%, 46%);
+$gray: hsl(0, 0%, 59%);
+
+body {
+	display: grid;
+	place-items: center;
+	background: url("../Starters/profile-card-component-main/images/bg-pattern-top.svg") -50% -30rem
+			no-repeat,
+		url("../Starters/profile-card-component-main/images/bg-pattern-bottom.svg")
+			45rem 25rem no-repeat,
+		linear-gradient($cyan, $cyan);
+
+	@media (max-width: 768px) {
+		background: url("../Starters/profile-card-component-main/images/bg-pattern-top.svg") -12rem -18rem
+				no-repeat,
+			url("../Starters/profile-card-component-main/images/bg-pattern-bottom.svg")
+				20rem 20rem no-repeat,
+			linear-gradient($cyan, $cyan);
+		background-size: contain;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 350px;
+	height: 350px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+	background-image: url("../Starters/profile-card-component-main/images/bg-pattern-card.svg");
+	background-size: cover;
+	height: 130px;
+	width: 100%;
+}
+
+.image {
+	border-radius: 50%;
+	border: 5px solid white;
+	position: relative;
+	left: 35%;
+	top: 60%;
+	aspect-ratio: 1/1;
+	width: 100px;
+}
+
+.stats {
+	grid-area: stats;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.stat {
+	display: grid;
+	place-items: center;
+}
+
+.number {
+	font-size: 1.2rem;
+	font-weight: 700;
+	font-family: $family;
+	color: $darkblue;
+}
+
+.type {
+	font-size: 0.65rem;
+	letter-spacing: 2px;
+	font-weight: 400;
+	color: $gray;
+	font-family: $family;
+}
+
+.line {
+	background-color: #eee;
+	height: 2px;
+	border: none;
+	margin: 1.3rem 0;
+}
+
+.nametag {
+	display: flex;
+	flex-direction: row;
+	gap: 0.6rem;
+
+	.name {
+		font-size: 1.2rem;
+		font-weight: 700;
+		font-family: $family;
+		color: $darkblue;
+	}
+	.age {
+		font-size: 1.2rem;
+		font-weight: 400;
+		color: $gray;
+		font-family: $family;
+	}
+}
+
+.topbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem;
+}
+
+.city {
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: $blue;
+	font-family: $family;
+}
