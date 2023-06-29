@@ -1,0 +1,178 @@
+@import "base";
+
+$family: "Kumbh Sans";
+$darkblue: hsl(238, 29%, 16%);
+$red: hsl(14, 88%, 65%);
+$violet: hsl(273, 75%, 66%);
+$softblue: hsl(240, 73%, 65%);
+$grayblue: hsl(237, 12%, 33%);
+$gray: hsl(240, 6%, 50%);
+$lightgray: hsl(240, 5%, 91%);
+
+body {
+	display: grid;
+	place-items: center;
+	background-image: linear-gradient(to top, $softblue, $violet);
+
+	padding-bottom: 2rem;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "logo faq";
+	z-index: 2;
+	margin-bottom: 1rem;
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+		// grid-template-rows: 20% 80%;
+		grid-template-areas:
+			"logo"
+			"faq";
+
+		position: absolute;
+		top: 8rem;
+		overflow: visible;
+	}
+
+	background-color: white;
+	border-radius: 1.2rem;
+	width: 80%;
+	overflow: hidden;
+}
+
+.logo {
+	grid-area: logo;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+
+	.desktop-woman {
+		position: relative;
+		left: 30%;
+		z-index: 1;
+	}
+	.desktop-pattern {
+		position: relative;
+		left: -95%;
+		top: -10%;
+		scale: 1.5;
+	}
+	.desktop-box {
+		position: absolute;
+		z-index: 3;
+		left: 2%;
+		top: 45%;
+	}
+}
+
+.logo-mob {
+	display: none;
+
+	@media screen and (max-width: 768px) {
+		display: grid;
+		place-items: center;
+		grid-area: logo;
+	}
+
+	.mobile-woman {
+		width: 250px;
+		position: absolute;
+		top: -7.2rem;
+		z-index: 6;
+	}
+	.mobile-pattern {
+		position: absolute;
+		top: -0.3rem;
+		z-index: 3;
+		width: 250px;
+	}
+}
+
+.content {
+	grid-area: faq;
+	padding: 4rem;
+
+	@media (max-width: 1024px) {
+		padding: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		scale: 0.9;
+		padding: 1rem;
+		padding-bottom: 0;
+	}
+
+	.title {
+		font-family: $family;
+		font-weight: 700;
+		font-size: 2.2rem;
+		color: $darkblue;
+
+		@media (max-width: 768px) {
+			text-align: center;
+			margin-top: 5rem;
+		}
+	}
+}
+
+.line {
+	height: 1.2px;
+	background-color: $lightgray;
+	margin: 1rem 0;
+	border: none;
+}
+
+.faqs {
+	margin-top: 2rem;
+}
+
+.faq {
+	.questionbox {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+
+		.question {
+			font-family: $family;
+			font-weight: 400;
+			font-size: 1rem;
+			color: $grayblue;
+
+			&:hover {
+				color: $red;
+			}
+		}
+		.question-active {
+			color: $darkblue;
+			font-weight: 700;
+		}
+
+		.arrow-flip {
+			transition: transform 0.3s ease-in-out;
+			transform: rotate(180deg);
+		}
+	}
+
+	.answer {
+		font-family: $family;
+		font-weight: 400;
+		font-size: 0.9rem;
+		color: $gray;
+		margin-top: 1rem;
+		height: auto;
+	}
+
+	.answer-hidden {
+		height: 0;
+		opacity: 0;
+		margin-top: 0;
+	}
+}

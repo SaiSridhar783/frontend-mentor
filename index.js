@@ -1,4 +1,4 @@
-const arr = ["3-column-preview-card-component-main","interactive-rating-component-main","nft-preview-card-component-main","order-summary-component-main","product-preview-card-component-main","profile-card-component-main","qr-code-component-main","results-summary-component-main","stats-preview-card-component-main"]
+const arr = ["3-column-preview-card-component-main","faq-accordion-card-main","interactive-rating-component-main","nft-preview-card-component-main","order-summary-component-main","product-preview-card-component-main","profile-card-component-main","qr-code-component-main","results-summary-component-main","stats-preview-card-component-main"]
 const contentElement = document.getElementById("content__list");
 
 arr.map((challenge) => {
