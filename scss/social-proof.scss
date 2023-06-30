@@ -1,0 +1,189 @@
+@import "base";
+
+$magenta: hsl(300, 43%, 22%);
+$softpink: hsl(333, 80%, 67%);
+$darkmagenta: hsl(303, 10%, 53%);
+$lightmagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+$family: "League Spartan", sans-serif;
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"main ratings"
+		"reviews reviews";
+
+	background: url("../Starters/social-proof-section-master/images/bg-pattern-top-desktop.svg")
+			no-repeat,
+		url("../Starters/social-proof-section-master/images/bg-pattern-bottom-desktop.svg")
+			20rem 5rem no-repeat;
+
+	padding: 7rem 8rem;
+
+	@media screen and (max-width: 900px) {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"main"
+			"ratings"
+			"reviews";
+
+		padding: 7rem 2rem;
+
+		background: url("../Starters/social-proof-section-master/images/bg-pattern-top-mobile.svg")
+				no-repeat,
+			url("../Starters/social-proof-section-master/images/bg-pattern-bottom-mobile.svg")
+				no-repeat;
+	}
+}
+
+.main {
+	grid-area: main;
+	padding: 0 30% 0 0;
+
+	@media screen and (max-width: 900px) {
+		text-align: center;
+		padding: 0;
+	}
+
+	.title {
+		font-family: $family;
+		font-size: 3.5rem;
+		font-weight: 700;
+		color: $magenta;
+		margin-bottom: 1rem;
+		letter-spacing: -2px;
+		line-height: 3rem;
+		@media screen and (max-width: 900px) {
+			font-size: 2.5rem;
+			line-height: 2rem;
+		}
+	}
+
+	.description {
+		font-family: $family;
+		font-size: 1.2rem;
+		font-weight: 400;
+		color: $darkmagenta;
+		margin-bottom: 2rem;
+		letter-spacing: -1px;
+	}
+}
+
+.ratings {
+	grid-area: ratings;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+	@media screen and (max-width: 900px) {
+		margin: 1rem 0 3rem 0;
+	}
+
+	.ratingCard {
+		display: flex;
+		align-items: center;
+		background-color: $lightmagenta;
+		border-radius: 8px;
+		padding: 0.8rem;
+		width: clamp(25rem, 70%, 30rem);
+
+		&:first-of-type {
+			align-self: flex-start;
+		}
+
+		&:last-of-type {
+			align-self: flex-end;
+		}
+
+		@media screen and (max-width: 900px) {
+			flex-direction: column;
+			align-items: center;
+			align-self: center;
+			gap: 0.8rem;
+			width: 100%;
+		}
+
+		.stars {
+			display: flex;
+			gap: 10px;
+			margin: 0 1.5rem;
+		}
+
+		.rating {
+			font-family: $family;
+			font-size: 1.1rem;
+			font-weight: 700;
+			color: $magenta;
+			letter-spacing: -1px;
+		}
+	}
+}
+
+.reviews {
+	grid-area: reviews;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+
+	@media screen and (max-width: 900px) {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.reviewCard {
+		background-color: $magenta;
+		border-radius: 12px;
+		padding: 2rem;
+
+		&:first-of-type {
+			align-self: flex-start;
+		}
+
+		&:last-of-type {
+			align-self: flex-end;
+		}
+
+		.logo {
+			border-radius: 50%;
+			width: 50px;
+			margin-right: 2rem;
+		}
+		.quote {
+			font-family: $family;
+			font-size: 1rem;
+			font-weight: 400;
+			color: $white;
+			// letter-spacing: 1px;
+			line-height: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		.infoMain {
+			display: flex;
+			align-items: center;
+		}
+
+		.info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: cneter;
+			.name {
+				font-family: $family;
+				font-size: 1.1rem;
+				font-weight: 700;
+				color: $white;
+			}
+			.buyer {
+				font-family: $family;
+				font-size: 1.1rem;
+				font-weight: 400;
+				color: $softpink;
+			}
+		}
+	}
+}
