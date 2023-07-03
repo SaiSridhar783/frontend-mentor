@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="../../css/article-preview.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script src="./logic.js" defer></script>
+
+		<title>Frontend Mentor | Article preview component</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+				position: absolute;
+				bottom: 10px;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="img"></div>
+			<div class="content">
+				<div class="title">
+					Shift the overall look and feel by adding these wonderful
+					touches to furniture in your home
+				</div>
+				<div class="description">
+					Ever been in a room and felt like something was missing?
+					Perhaps it felt slightly bare and uninviting. I&apos;ve got
+					some simple tips to help you make any room feel complete.
+				</div>
+				<div class="author">
+					<div class="center">
+						<img
+							class="author-img"
+							src="./images/avatar-michelle.jpg"
+							alt="michelle"
+						/>
+						<div class="box">
+							<div class="name">Michelle Appleton</div>
+							<div class="date">28 Jun 2020</div>
+						</div>
+					</div>
+
+					<div class="icon">
+						<img alt="share" src="./images/icon-share.svg" />
+					</div>
+				</div>
+			</div>
+			<div class="tooltip hidden">
+				<span class="tooltiptext">Share</span>
+				<img
+					alt="facebook"
+					src="./images/icon-facebook.svg"
+					class="social"
+				/>
+				<img
+					src="./images/icon-twitter.svg"
+					alt="twitter"
+					class="social"
+				/>
+				<img
+					src="./images/icon-pinterest.svg"
+					alt="pinterest"
+					class="social"
+				/>
+			</div>
+		</div>
+
+		<div class="attribution">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				>Frontend Mentor</a
+			>. Coded by
+			<a href="https://github.com/SaiSridhar783">Akula Sai Sridhar</a>.
+		</div>
+	</body>
+</html>
